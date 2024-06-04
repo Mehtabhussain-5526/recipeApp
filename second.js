@@ -67,7 +67,7 @@ deleteBtn.addEventListener("click", () => {
     dataToShow = JSON.stringify(displayData);
     localStorage.setItem("recipe", dataToShow);
   }
-  location.href = `page1.html`;
+  location.href = `index.html`;
 });
 
 // Updation declarations
