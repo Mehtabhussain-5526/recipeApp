@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(255, 255, 255);
+    /* text-align: center; */
+    /* color:#e8e8e9 ; */
+    padding: 0;
+    margin: 0;
+}
+
+.heading {
+    margin: 0px;
+    font-size: 4rem;
+    color: rgb(236, 236, 236);
+    margin-left: 15% ;
+    font-style: italic;
+}
+.navigation {
+    background-color: indigo;
+    padding: 20px 0px;
+    margin: 0px 0px; 
+}
+
+
+.search1 {
+    position: relative;
+    width: 450px ;
+    height: 50px ;
+    transform: translate(-50, -50);
+    border: 1px solid grey;
+    border-radius: 50px;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 20px;
+}
+
+.search1:focus{ 
+    outline: none;
+    border: 2px solid rgb(60, 179, 179);
+    
+}
+.search1:hover {
+    border: 2px solid indigo;
+    cursor: pointer;
+}
+
+a {
+text-decoration: none;
+color: rgb(41, 38, 38);
+font-size: 1.5rem;
+}
+
+.btn-1 {
+    padding: 20px 80px 20px 80px;
+    margin-top: 30px;
+    border-radius: 50px;
+    border: 1px solid indigo;
+    background-color: indigo;
+    color: ivory;
+    box-shadow: -1px 1px 1px;
+    font-size: 20px;
+}
+
+.btn-1:hover {
+    border: none;
+    cursor: pointer;
+}
+.btn-1:focus {
+    outline: none;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.hero .recipearray {
+    margin-top: 20px;
+    width: 40%;
+}
+
+.recipearray a {
+    display: block;
+    width: 100%;
+    border: 1px solid indigo;
+    border-radius: 2px;
+    margin-top: 20px;
+    background-color: inherit;
+    color: rgb(90, 83, 83);
+    font-style: italic;
+    box-shadow: -1px 1px 1px ;
+}
+.recipearray a:hover {
+    border: 2px solid indigo;
+    background-color: rgb(206, 206, 206);
+}
+.recipearray div p:first-child {
+    font-weight: bolder;
+}
+.recipearray a p {
+    margin-left: 15px;
+}
+
+/* Edit page */
+.hero2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+.recipetitle {
+    position: relative;
+    width: 450px ;
+    height: 50px ;
+    transform: translate(-50, -50);
+    border: none;
+    border-bottom: 1px solid darkslategrey;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-left: 20px; 
+    margin-bottom: 2.5rem ;  
+}
+.recipetitle:hover {
+    border: 1px solid indigo;
+    cursor: pointer;
+}
+.recipetitle:focus {
+    outline: none;
+    border: 2px solid indigo;
+}
+
+.recipesteps {
+    margin: 1rem;
+    font-size: 18px;
+    height: 265px;
+    width: 45%;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.recipesteps:focus {
+    outline: none;
+    border: 1px solid indigo;
+}
+
+.recipesteps:hover {
+    border: 1px solid darkslategrey;
+}
+
+.ingridients {
+    text-align: center;
+}
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ordered-list li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 500px;
+    margin-top: 20px;
+    border-bottom: 1px solid darkslategrey;
+}
+#ordered-list li button {
+
+    padding: 8px 20px 8px 20px;
+    background-color: rgb(228, 72, 72);
+    color: rgb(251, 250, 250);
+    margin-bottom: 5px;
+    border: none
+}
+#ordered-list li button:hover {
+    border: 1px solid rgb(228, 72, 72);
+    cursor: pointer;
+}
+
+#ordered-list li span {
+    font-size: 20px;
+    font-weight:lighter;
+    color: rgb(61, 56, 56);
+}
+
+#ordered-list li input {
+    width: 20px;
+    height: 20px;
+}
+
+#ingridients-form .addingridient {
+  margin-top: 40px;
+  height: 35px;
+  width: 250px;
+  border:none;
+  border-radius: 10px;
+  border-bottom: 1px solid indigo;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+#ingridients-form .addingridient:focus {
+    outline: none;
+    border: 2px solid indigo;
+}
+
+#ingridients-form .addingridient:hover {
+    border: 1px solid indigo;
+}
+
+#ingridients-form .submitbtn {
+    width: 150px;
+    height: 30px;
+    margin-left: 70px;
+    background-color: inherit;
+    color: indigo;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid  indigo;
+    border-radius: 50px;
+}
+
+#ingridients-form .submitbtn:hover {
+    border: 2px solid indigo;
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
+#ingridients-form .submitbtn:focus{
+    outline: none;
+}
+
+.delete {
+    height: 250px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.delete h1 {
+    font-size: 30px;
+    font-weight: lighter;
+}
+.ingridients {
+    font-size: 30px;
+    font-weight: lighter;
+}
+.btn2 {
+    width: 200px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: rgb(228, 72, 72);
+    border: none;
+    color: rgb(251, 250, 250);
+}
+.btn2:focus {
+    outline: none;
+}
+
+.btn2:hover {
+    cursor: pointer;
+    background-color: rgb(226, 53, 53) ;
+    border-bottom: 4px solid red;
+}
+
+.btn2:focus {
+    outline: none;
+}
+.home-1 {
+    margin-left: 120px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+}
+
+.home {
+    width: 200px;
+    height: 40px;
+    background-color: inherit;
+    color: indigo;
+    border: 1px solid indigo;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 40px;
+}
+.home:focus {
+    outline: none;
+}
+.home:hover {
+    cursor: pointer;
+    border: 2px solid indigo;
+    background-color: lavender;
+}
+

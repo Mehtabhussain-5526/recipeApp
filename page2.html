@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editing Recipe</title>
+    <link rel="stylesheet" href="page2.css" />
+    <link rel="icon" href="assets/png/FAVI.png" type="image/png" />
+  </head>
+
+  <body>
+    <div class="navigation">
+      <h1 class="heading">Recipe App</h1>
+    </div>
+    <section class="sec1">
+      <div class="home-1">
+        <a href="page1.html"
+          ><button class="home" id="home-btn">SAVE</button>
+        </a>
+      </div>
+      <div class="hero2" id="edit-hero">
+        <input
+          type="text"
+          class="recipetitle"
+          id="recipe-title"
+          placeholder="RECIPE NAME"
+        />
+        <textarea
+          name="steps"
+          class="recipesteps"
+          id="recipe-steps"
+          placeholder="STEPS TO COOK"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <h2 class="ingridients">Ingridients</h2>
+      <div class="middle">
+        <div class="ingridentslist" id="ingridients-list">
+          <ol id="ordered-list" class="ols"></ol>
+        </div>
+        <div class="additem" id="add-item">
+          <form id="ingridients-form">
+            <input
+              type="text"
+              name="ingridient"
+              id="add-ingridient"
+              class="addingridient"
+              placeholder="Ingridient Name"
+              required
+            />
+            <input
+              class="submitbtn"
+              id="ing-submit-btn"
+              type="submit"
+              value="Add"
+            />
+          </form>
+        </div>
+        <div class="delete">
+          <h1>Danger Zone</h1>
+          <button class="btn2" id="btn-2">Delete Recipe</button>
+        </div>
+      </div>
+    </section>
+    <script src="second.js"></script>
+  </body>
+</html>
