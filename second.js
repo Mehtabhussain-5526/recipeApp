@@ -70,6 +70,49 @@ deleteBtn.addEventListener("click", () => {
   location.href = `index.html`;
 });
 
+// set to localStorage
+document.getElementById("home-btn").addEventListener("click", (e) => {
+  // Status Updater
+  let chARR = [];
+  for (i = 0; i < ingridientArray.length; i++) {
+    local = ingridientArray[i].check;
+    chARR.push(local);
+  }
+  const statusChecker = chARR.filter((x) => x === true);
+  if (statusChecker.length === 0) {
+    latestStatus = "You have no ingridients";
+  } else if (statusChecker.length < chARR.length && statusChecker.length > 0) {
+    latestStatus = "You have some ingridients";
+  } else if (statusChecker.length === chARR.length) {
+    latestStatus = "You have all ingridients";
+  }
+  // Saving
+  let incomingRName = params.get("current");
+  if (incomingIND && incomingRName) {
+    const data1 = {
+      id: Math.random(),
+      title: titleValue.value,
+      steps: stepsValue.value,
+      ingridientsNames: ingridientArray,
+      status: latestStatus,
+    };
+    displayData.splice(incomingIND, 1, data1);
+    localStorage.setItem("recipe", JSON.stringify(displayData));
+  } else {
+    const data = {
+      id: Math.random(),
+      title: titleValue.value,
+      steps: stepsValue.value,
+      ingridientsNames: ingridientArray,
+      status: latestStatus,
+    };
+    const initData = [];
+    const storedData = JSON.parse(localStorage.getItem("recipe")) || initData;
+    storedData.push(data);
+    localStorage.setItem("recipe", JSON.stringify(storedData));
+  }
+});
+
 // Updation declarations
 let incomingIND = params.get("id");
 if (incomingIND) {
@@ -134,45 +177,3 @@ if (editIndex >= 0 && forCompairing) {
   }
 }
 
-// set to localStorage
-document.getElementById("home-btn").addEventListener("click", (e) => {
-  // Status Updater
-  let chARR = [];
-  for (i = 0; i < ingridientArray.length; i++) {
-    local = ingridientArray[i].check;
-    chARR.push(local);
-  }
-  const statusChecker = chARR.filter((x) => x === true);
-  if (statusChecker.length === 0) {
-    latestStatus = "You have no ingridients";
-  } else if (statusChecker.length < chARR.length && statusChecker.length > 0) {
-    latestStatus = "You have some ingridients";
-  } else if (statusChecker.length === chARR.length) {
-    latestStatus = "You have all ingridients";
-  }
-  // Saving
-  let incomingRName = params.get("current");
-  if (incomingIND && incomingRName) {
-    const data1 = {
-      id: Math.random(),
-      title: titleValue.value,
-      steps: stepsValue.value,
-      ingridientsNames: ingridientArray,
-      status: latestStatus,
-    };
-    displayData.splice(incomingIND, 1, data1);
-    localStorage.setItem("recipe", JSON.stringify(displayData));
-  } else {
-    const data = {
-      id: Math.random(),
-      title: titleValue.value,
-      steps: stepsValue.value,
-      ingridientsNames: ingridientArray,
-      status: latestStatus,
-    };
-    const initData = [];
-    const storedData = JSON.parse(localStorage.getItem("recipe")) || initData;
-    storedData.push(data);
-    localStorage.setItem("recipe", JSON.stringify(storedData));
-  }
-});

@@ -3,6 +3,10 @@ let dataToShow = localStorage.getItem("recipe");
 let displayData = JSON.parse(dataToShow);
 const inputBox = document.getElementById("search-recipe");
 const searchInput = document.getElementById("search-recipe").value;
+let lengthofArr;
+if(displayData){
+  lengthofArr = displayData.length;
+}
 function elRemover() {
   const pDiv = document.getElementById("recipe-array");
   while (pDiv.firstChild) {
@@ -12,7 +16,7 @@ function elRemover() {
 function renderer() {
   elRemover();
   let pDiv = document.getElementById("recipe-array");
-  for (i = 0; i < displayData.length; i++) {
+  for (i = 0; i < lengthofArr; i++) {
     const incomingData = displayData[i];
     const tToShow = incomingData.title;
     const sToShow = incomingData.status;
@@ -22,8 +26,7 @@ function renderer() {
     const dItem = pDiv.lastElementChild;
     dItem.innerHTML = `<p>${tToShow}</p><p>${sToShow}
     </p>`;
-  }
-}
+  }}
 renderer();
 // Searching
 function searching() {
