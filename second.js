@@ -87,7 +87,7 @@ document.getElementById("home-btn").addEventListener("click", (e) => {
     latestStatus = "You have all ingridients";
   }
   // Saving
-  let incomingRName = params.get("current");
+  let incomingRName = params.get("title");
   if (incomingIND && incomingRName) {
     const data1 = {
       id: Math.random(),
@@ -115,6 +115,7 @@ document.getElementById("home-btn").addEventListener("click", (e) => {
 
 // Updation declarations
 let incomingIND = params.get("id");
+console.log(incomingIND);
 if (incomingIND) {
   const upArray = displayData[incomingIND].ingridientsNames;
   for (i = 0; i < upArray.lenght; i++) {
@@ -123,7 +124,8 @@ if (incomingIND) {
 }
 
 // for Editing and updating
-const forCompairing = params.get("current");
+const forCompairing = params.get("title");
+console.log(forCompairing);
 const editIndex = displayData.findIndex((x) => x.title === forCompairing);
 if (editIndex >= 0 && forCompairing) {
   let parentEl = document.querySelector("#ordered-list");

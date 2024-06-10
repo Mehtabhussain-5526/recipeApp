@@ -57,12 +57,8 @@ dTags.forEach((dTags) => {
     );
     const knownResTitle = knownRes[0].title;
     parsingVar = knownResTitle;
-    let url = new URL("http://127.0.0.1:5500/page2.html");
-    let params = new URLSearchParams(window.location.search);
-    params.set("current", parsingVar);
-    params.set("id", toSendIndex);
-    url.search = params.toString();
-    location.href = url.href;
+    window.location.href = `./page2.html?id=${toSendIndex}&title=${parsingVar}`;
+
   });
 });
 
